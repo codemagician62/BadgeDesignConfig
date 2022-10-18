@@ -28,15 +28,15 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return `<div style="background-color: ${values.backgroundColor};">Click this section in order to change background-color and then hide itself.</div>`;
+        return '<div style="font-style: italic; color: red; border: 1px solid;">Click this section in order to change background-color and then hide itself.</div>';
       },
     }),
     exporters: {
       web: function (values) {
-        return '<div>Click this section in order to change background-color and then hide itself.</div>';
+        return '<div style="font-style: italic; color: red; border: 1px solid;">Click this section in order to change background-color and then hide itself.</div>';
       },
       email: function (values) {
-        return '<div>Click this section in order to change background-color and then hide itself.</div>';
+        return '<div style="font-style: italic; color: red; border: 1px solid;">Click this section in order to change background-color and then hide itself.</div>';
       },
     },
     head: {
