@@ -1,6 +1,6 @@
 unlayer.registerTool({
-  name: "my_tool",
-  label: "Background Color",
+  name: "my_bg_color_tool",
+  label: "BG Color",
   icon: "fa-palette",
   supportedDisplayModes: ["web", "email"],
   options: {
@@ -22,15 +22,16 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return "";
+        // return '<div>Click me to change</div>';
+        return `<div style="background-color: ${values.backgroundColor};">Click me to change</div>`;
       },
     }),
     exporters: {
       web: function (values) {
-        return "";
+        return '<div style="display: none;">Click me to change</div>';
       },
       email: function (values) {
-        return "";
+        return '<div style="display: none;">Click me to change</div>';
       },
     },
     head: {
