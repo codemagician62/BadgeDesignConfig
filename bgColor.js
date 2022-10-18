@@ -28,22 +28,20 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        // return '<div>Click me to change</div>';
-        return `<div style="background-color: ${values.backgroundColor};">Click me to change</div>`;
+        return `<div style="background-color: ${values.backgroundColor};">Click this section in order to change background-color and then hide itself.</div>`;
       },
     }),
     exporters: {
       web: function (values) {
-        return '<div style="display: none;">Click me to change</div>';
+        return '<div>Click this section in order to change background-color and then hide itself.</div>';
       },
       email: function (values) {
-        return '<div style="display: none;">Click me to change</div>';
+        return '<div>Click this section in order to change background-color and then hide itself.</div>';
       },
     },
     head: {
       css: function (values) {
         // console.log("values => ", values)
-        // console.log("values._meta.htmlID => ", values._meta.htmlID)
         // return `#${values._meta.htmlID} { background-color: ${values.backgroundColor}; color: ${values.textColor}; }`
         if (values.displayToggle === false) return `#${values._meta.htmlID} { display: none; }`;
         return `#u_body { background-color: ${values.backgroundColor} !important; }`;

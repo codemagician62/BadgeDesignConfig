@@ -30,25 +30,24 @@ unlayer.registerTool({
   renderer: {
     Viewer: unlayer.createViewer({
       render(values) {
-        return "";
+        return '<div style="opacity: 0.2;">Click this section in order to change background-image and then hide itself.</div>';
       },
     }),
     exporters: {
       web: function (values) {
-        return "";
+        return '<div style="opacity: 0.2;">Click this section in order to change background-image and then hide itself.</div>';
       },
       email: function (values) {
-        return "";
+        return '<div style="opacity: 0.2;">Click this section in order to change background-image and then hide itself.</div>';
       },
     },
     head: {
       css: function (values) {
         console.log("values => ", values);
-        // console.log("values._meta.htmlID => ", values._meta.htmlID)
         // return `#${values._meta.htmlID} { background-color: ${values.backgroundColor}; color: ${values.textColor}; }`
-        // return `#u_body { background-image: url(https://www.swiftdigital.com.au/wp-content/uploads/2021/06/free-online-photo-editors.jpg); }`;
         if (values.displayToggle === false) return `#${values._meta.htmlID} { display: none; }`;
-        return `#u_body { background-image: url(${values.backgroundImage.url}); }`;
+        return `#u_body { background-image: url(https://www.swiftdigital.com.au/wp-content/uploads/2021/06/free-online-photo-editors.jpg); }`;
+        // return `#u_body { background-image: url(${values.backgroundImage.url}); }`;
       },
       js: function (values) {
         return 'console.log("Tool JavaScript");';
