@@ -26,7 +26,7 @@ unlayer.registerTool({
           // Property: backgroundImage
           label: "Background Image", // Label for Property
           defaultValue: {
-            url: "http://via.placeholder.com/350x150",
+            url: "https://via.placeholder.com/600x800",
           },
           widget: "image", // Property Editor Widget: image
         },
@@ -50,10 +50,11 @@ unlayer.registerTool({
     },
     head: {
       css: function (values) {
-        // console.log("values => ", values)
+        console.log("values => ", values)
         // console.log("values._meta.htmlID => ", values._meta.htmlID)
         // return `#${values._meta.htmlID} { background-color: ${values.backgroundColor}; color: ${values.textColor}; }`
-        return "#u_body { background-image: url(https://www.swiftdigital.com.au/wp-content/uploads/2021/06/free-online-photo-editors.jpg); }";
+        // return `#u_body { background-image: url(https://www.swiftdigital.com.au/wp-content/uploads/2021/06/free-online-photo-editors.jpg); }`;
+        return `#u_body { background-image: url(${values.backgroundImage.url}); }`;
       },
       js: function (values) {
         return 'console.log("Tool JavaScript");';
