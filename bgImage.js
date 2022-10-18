@@ -4,25 +4,6 @@ unlayer.registerTool({
   icon: "fa-image",
   supportedDisplayModes: ["web", "email"],
   options: {
-    colors: {
-      // Property Group
-      title: "Colors", // Title for Property Group
-      position: 1, // Position of Property Group
-      options: {
-        backgroundColor: {
-          // Property: backgroundColor
-          label: "Background Color", // Label for Property
-          defaultValue: "#FF0000",
-          widget: "color_picker", // Property Editor Widget: color_picker
-        },
-        displayToggle: {
-          // Property: backgroundColor
-          label: "Display Toggle (hide section after all changes)", // Label for Property
-          defaultValue: true,
-          widget: "toggle", // Property Editor Widget: color_picker
-        },
-      },
-    },
     image: {
       // Property Group
       title: "Image", // Title for Property Group
@@ -36,6 +17,12 @@ unlayer.registerTool({
           },
           widget: "image", // Property Editor Widget: image
         },
+        displayToggle: {
+          // Property: backgroundColor
+          label: "Display Toggle (hide section after all changes)", // Label for Property
+          defaultValue: true,
+          widget: "toggle", // Property Editor Widget: color_picker
+        },        
       },
     },
   },
