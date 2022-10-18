@@ -15,6 +15,12 @@ unlayer.registerTool({
           defaultValue: "#FF0000",
           widget: "color_picker", // Property Editor Widget: color_picker
         },
+        displayToggle: {
+          // Property: backgroundColor
+          label: "Display Toggle (hide section after all changes)", // Label for Property
+          defaultValue: true,
+          widget: "toggle", // Property Editor Widget: color_picker
+        },
       },
     },
     image: {
@@ -50,10 +56,11 @@ unlayer.registerTool({
     },
     head: {
       css: function (values) {
-        console.log("values => ", values)
+        console.log("values => ", values);
         // console.log("values._meta.htmlID => ", values._meta.htmlID)
         // return `#${values._meta.htmlID} { background-color: ${values.backgroundColor}; color: ${values.textColor}; }`
         // return `#u_body { background-image: url(https://www.swiftdigital.com.au/wp-content/uploads/2021/06/free-online-photo-editors.jpg); }`;
+        if (values.displayToggle === false) return `#${values._meta.htmlID} { display: none; }`;
         return `#u_body { background-image: url(${values.backgroundImage.url}); }`;
       },
       js: function (values) {
