@@ -15,6 +15,12 @@ unlayer.registerTool({
           defaultValue: "#FF0000",
           widget: "color_picker", // Property Editor Widget: color_picker
         },
+        displayToggle: {
+          // Property: backgroundColor
+          label: "Display Toggle (hide section after all changes)", // Label for Property
+          defaultValue: true,
+          widget: "toggle", // Property Editor Widget: color_picker
+        },   
       },
     },
   },
@@ -39,6 +45,7 @@ unlayer.registerTool({
         // console.log("values => ", values)
         // console.log("values._meta.htmlID => ", values._meta.htmlID)
         // return `#${values._meta.htmlID} { background-color: ${values.backgroundColor}; color: ${values.textColor}; }`
+        if (values.displayToggle === false) return `#${values._meta.htmlID} { display: none; }`;
         return `#u_body { background-color: ${values.backgroundColor} !important; }`;
       },
       js: function (values) {
