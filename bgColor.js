@@ -1,3 +1,4 @@
+console.log("AAAAAAAAAAAA")
 unlayer.registerTool({
   name: "my_bg_color_tool",
   label: "BG Color",
